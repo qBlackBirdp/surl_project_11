@@ -48,4 +48,26 @@ public class SurlController {
 
         return url;
     }
+
+    @GetMapping("/g/{id}")
+    public String go(
+            @PathVariable long id
+    ) {
+        Surl surl = surls.stream()
+                .filter(_surl -> _surl.getId() == id)
+                .findFirst()
+                .orElse(null);
+
+        if (surl == null) throw new RuntimeException("%d번 데이터를 찾을 수 없어".formatted(id));
+
+        surl.increaseCount();
+
+        return "redirect:" + surl.getUrl();
+    }
+
+    @GetMapping("/all")
+    @ResponseBody
+    public List<Surl> getAll() {
+        return surls;
+    }
 }
