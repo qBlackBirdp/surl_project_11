@@ -16,12 +16,12 @@ public class HomeController {
     @GetMapping("/")
     @ResponseBody
     public String showMain() {
-        return "Main on" + customSiteName;
+        return "Main on " + customSiteName;
     }
 
     @GetMapping("/secretKey")
     @ResponseBody
     public String showSecretKey() {
-        return "Main on" + secretKey;
+        return "Main on " + secretKey;
     }
 }

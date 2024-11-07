@@ -5,6 +5,12 @@ spring:
   profiles:
     active: dev
     include: secret
+  datasource:
+    url: jdbc:mysql://localhost:3308//surl_dev
+    hikari:
+      username: root
+      password: koreait123414
+      driver-class-name: com.mysql.cj.jdbc.Driver
 custom:
   site:
     name: "My Site"
