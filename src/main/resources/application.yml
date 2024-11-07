@@ -14,6 +14,19 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        default_batch_fetch_size: 100
+        format_sql: true
+        highlight_sql: true
+        use_sql_comments: true
+logging:
+  level:
+    com.hys.exam.surl_project_11: DEBUG
+    org.hibernate.sql: debug
+    org.hibernate.orm.jdbc.bind: trace
+    org.hibernate.jdbc.Expectation: trace
+    org.springframework.transaction.interceptor: trace
 custom:
   site:
     name: "My Site"
