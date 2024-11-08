@@ -42,12 +42,12 @@ public class NotProd {
 
         //articleRepository.deleteAll();
 
-        Article article1 = Article.builder().
-                title("제목1")
+        Article article1 = Article.builder()
+                .title("제목1")
                 .body("내용1").build();
 
-        Article article2 = Article.builder().
-                title("제목2")
+        Article article2 = Article.builder()
+                .title("제목2")
                 .body("내용2").build();
 
 
@@ -67,11 +67,8 @@ public class NotProd {
 
         List<Article> articles = articleRepository.findAll(); // JpaRepository 기본 제공
 
-        List<Article> articles1 = articleRepository.findByIdInOrderByTitleDescIdAsc(List.of(1L, 2L));
-
+        List<Article> articlesByIn = articleRepository.findByIdInOrderByTitleDescIdAsc(List.of(1L, 2L));
         articleRepository.findByTitleContaining("제목");
-
         articleRepository.findByTitleAndBody("제목", "내용");
-
     }
 }
