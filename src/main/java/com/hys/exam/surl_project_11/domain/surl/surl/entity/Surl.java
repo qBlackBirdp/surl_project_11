@@ -1,4 +1,4 @@
-package com.hys.exam.surl_project_11;
+package com.hys.exam.surl_project_11.domain.surl.surl.entity;
 
 import lombok.*;
 
