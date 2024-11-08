@@ -7,10 +7,9 @@ spring:
     include: secret
   datasource:
     url: jdbc:mysql://localhost:3308/surl_dev
-    hikari:
-      username: root
-      password: koreait123414
-      driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: koreait123414
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
@@ -20,13 +19,13 @@ spring:
         format_sql: true
         highlight_sql: true
         use_sql_comments: true
-logging:
-  level:
-    com.hys.exam.surl_project_11: DEBUG
-    org.hibernate.sql: debug
-    org.hibernate.orm.jdbc.bind: trace
-    org.hibernate.jdbc.Expectation: trace
-    org.springframework.transaction.interceptor: trace
 custom:
   site:
     name: "My Site"
+logging:
+  level:
+    com.hys.exam.surl_project_11: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE
+    org.hibernate.orm.jdbc.extract: TRACE
+    org.springframework.transaction.interceptor: TRACE
