@@ -35,7 +35,8 @@ public class MemberService {
         return RsData.of("회원가입이 완료되었습니다.", member);
     }
 
-    private Optional<Member> findByUsername(String username) {
+    @Transactional
+    public Optional<Member> findByUsername(String username) {
         return memberRepository.findByUsername(username);
     }
 
@@ -43,4 +44,7 @@ public class MemberService {
         return memberRepository.getReferenceById(id);
     }
 
+    public long count() {
+        return memberRepository.count();
+    }
 }
