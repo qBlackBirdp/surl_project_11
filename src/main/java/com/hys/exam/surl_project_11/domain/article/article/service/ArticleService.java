@@ -2,6 +2,7 @@ package com.hys.exam.surl_project_11.domain.article.article.service;
 
 import com.hys.exam.surl_project_11.domain.article.article.entity.Article;
 import com.hys.exam.surl_project_11.domain.article.article.repository.ArticleRepository;
+import com.hys.exam.surl_project_11.domain.member.member.entity.Member;
 import com.hys.exam.surl_project_11.global.rsData.RsData;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,11 +22,12 @@ public class ArticleService {
     }
 
     @Transactional
-    public RsData<Article> write(String title, String body) {
+    public RsData<Article> write(Member member, String title, String body) {
         Article article = Article
                 .builder()
                 .title(title)
                 .body(body)
+                .author(member)
                 .build();
 
         articleRepository.save(article);
