@@ -14,7 +14,7 @@ public class HomeController {
     @GetMapping("/")
     @ResponseBody
     public String showMain() {
-        return "Main on " + customSiteName;
+        return "Main on " + customSiteName + " 123123";
     }
 
 }
